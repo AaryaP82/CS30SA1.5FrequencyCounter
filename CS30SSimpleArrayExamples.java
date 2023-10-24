@@ -8,11 +8,11 @@ import java.util.Random;
  *  Name:           Aarya
  *  Class:          CS30S
  * 
- *  Assignment:     A1.5
+ *  Assignment:    Simple Array Examples
  * 
  *************************************************************/
 
-public class FrequencyCounter {
+public class CS30SSimpleArrayExamples extends FormatTemplateV4 {
 
     public static void main(String[] args) throws IOException{
         // ***** constants *******
@@ -29,10 +29,16 @@ public class FrequencyCounter {
         String delim = "[ ]+";          // delimiter for splitting input records
         String[] tokens = null;         // used to split input records
         
-        int[] list = new int[1000];
+        //declare, allocate, and populate a simple array
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] list = new int[10];
+        //System.out.println(list);
+        
+        int n = 0;         // temp input from keyboard
+        int count = 0;     //actaul size f array
 
         // ***** objects *****
-        //Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         //NumberFormat currency = NumberFormat.getCurrencyInstance();
         Random random = new Random();
         
@@ -46,22 +52,46 @@ public class FrequencyCounter {
         banner = "*****************************" + nl;
         banner += "Name:        Aarya" + nl;
         banner += "Class:       CS30S" + nl;
-        banner += "Assignment:  A1.5 Frequency Counter" + nl;
+        banner += "Assignment:  Simple Array Examples" + nl;
         banner += "*****************************" + nl + nl;
 
         System.out.println(banner);
         //fout.print(banner);
 
-        // ***** Get Input *****
+        // ***** examples *****
         
+        //load the array with random numbers
+        // System.out.println("loading the list with random number");
+        
+        // for(int i = 0; i < list.length; i++){
+            // list[i] = random.nextInt(6);
+        // }//end load list
+    
+        
+        //load array from the keyboard
+        //pre-loop
+        count = 0;
+        
+        System.out.println("enter number, 0 to the end.");
+        n = scanner.nextInt();
+        
+        while(n != 0 && count < 10){
+            list[count++] = n;        //add n to the list at index count
+            
+            n = scanner.nextInt();
+        }//end while
+        
+        //print the arary
+        for(int i=0; i < count; i++){
+                System.out.println(i + ". " + list[i]);
+        }//end for int i
+            
+        // for(int i=0; i < daysInMonth.length; i++){
+                // System.out.println(daysInMonth[i]);
+        // }//end for int i
+
+    
         // ***** Main Processing *****
-        
-        System.out.println("loading the list with random number");
-        
-         for(int i = 0; i < list.length; i++){
-             list[i] = random.nextInt(51);
-             System.out.println(list[i]);
-         }//end load list
 
         // ***** Print Formatted Output *****
 
