@@ -56,12 +56,15 @@ public class FrequencyCounter {
         
         // ***** Main Processing *****
         
+        //load list of random numbers
+        
         System.out.println("loading the list with random number");
         
          for(int i = 0; i < list.length; i++){
-             list[i] = random.nextInt(51);
+             list[i] = random.nextInt(50) + 1;
              System.out.println(list[i]);
          }//end load list
+         
 
         // ***** Print Formatted Output *****
 
