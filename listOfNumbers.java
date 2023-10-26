@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.io.*;
 import java.text.NumberFormat;
 import java.util.Random;
+import java.io.PrintWriter;
 
 /** ***************************************************
  *  Name:           Aarya
@@ -12,7 +13,7 @@ import java.util.Random;
  * 
  *************************************************************/
 
-public class FrequencyCounter {
+public class listOfNumbers {
 
     public static void main(String[] args) throws IOException{
         // ***** constants *******
@@ -38,8 +39,8 @@ public class FrequencyCounter {
         
         // file io buffers for reading and writing to text files
         
-        //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
-        //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
+        //BufferedReader fin = new BufferedReader(new FileReader("listOfNumbers.txt"));
+        PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("listOfNumbers.txt")));
 
         // ***** print banners *****
 
@@ -55,6 +56,7 @@ public class FrequencyCounter {
         // ***** Get Input *****
         
         // ***** Main Processing *****
+    
         
         //load list of random numbers
         
@@ -64,6 +66,8 @@ public class FrequencyCounter {
              list[i] = random.nextInt(50) + 1;
              System.out.println(list[i]);
          }//end load list
+         
+         System.out.close();
          
 
         // ***** Print Formatted Output *****
