@@ -2,22 +2,26 @@ import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
 import java.text.NumberFormat;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 /** ***************************************************
  *  Name:           Aarya
  *  Class:          CS30S
  * 
- *  Assignment:     A1.5
+ *  Assignment:     Frequency Counter
  * 
  *************************************************************/
 
-public class listOfNumbers {
+public class FrequencyCounter {
 
     public static void main(String[] args) throws IOException{
         // ***** constants *******
         // a new line character that works on every computer system
         final String nl = System.lineSeparator();
+
+        final int MAX = 1000;        //biggest size of array
+
         // ***** variables *****
 
         String banner = "";             // output banner
@@ -28,64 +32,58 @@ public class listOfNumbers {
 
         String delim = "[ ]+";          // delimiter for splitting input records
         String[] tokens = null;         // used to split input records
+
+        //create array
+        int [] list = new int [MAX];
         
-        int[] list = new int[1000];
+        int i = 0;
 
         // ***** objects *****
-        //Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         //NumberFormat currency = NumberFormat.getCurrencyInstance();
-        Random random = new Random();
-        
+
         // file io buffers for reading and writing to text files
-        
-        //BufferedReader fin = new BufferedReader(new FileReader("listOfNumbers.txt"));
-        PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("listOfNumbers.txt")));
+
+        BufferedReader fin = new BufferedReader(new FileReader("listOfNumbers.txt"));
+        //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
 
         // ***** print banners *****
 
         banner = "*****************************" + nl;
         banner += "Name:        Aarya" + nl;
         banner += "Class:       CS30S" + nl;
-        banner += "Assignment:  A1.5 Frequency Counter" + nl;
+        banner += "Assignment:  Frequency Counter" + nl;
         banner += "*****************************" + nl + nl;
 
         System.out.println(banner);
         //fout.print(banner);
 
         // ***** Get Input *****
-        
         // ***** Main Processing *****
+
+        //prime loop
+        strin = fin.readLine();
+
+        while(strin != null){
+            list[i] = Integer.parseInt(strin);
+            System.out.println(list[i]);
+
+            //update loop control
+            strin = fin.readLine();
+        }
     
-        
-        //load list of random numbers
-        
-        System.out.println("loading the list with random number");
-        
-        try{
-            PrintWriter output = new PrintWriter("listOfNumbers.txt");
-         for(int i = 0; i < list.length; i++){
-             list[i] = random.nextInt(50) + 1;
-             System.out.println(list[i]);
-             output.println(list[i]);
-         }//end load list
-         output.close();
-        }//end try
-        catch(Exception e){
-            e.getStackTrace();
-        }//end catch
-         
-         System.out.close();
+
+        // System.out.println("_____________________");
+        // System.out.println(list);
 
         // ***** Print Formatted Output *****
-
         // ***** Closing Message *****
-
         System.out.println();
         System.out.println("end of processing");
         //fout.println("End of Processing");
-        
-         // **** close io buffers *****
-    
+
+        // **** close io buffers *****
+
         //fin.close();
         //fout.close();
     } // end main 
