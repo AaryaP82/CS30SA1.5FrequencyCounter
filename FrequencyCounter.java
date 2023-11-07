@@ -35,8 +35,12 @@ public class FrequencyCounter {
 
         //create array
         int [] list = new int [MAX];
-        
+
+        int [] frequencies = new int [list.length];
+
         int i = 0;
+        int count = 0;      //count of frequency of numbers
+        int counted = -1;    //already counted 
 
         // ***** objects *****
         Scanner scanner = new Scanner(System.in);
@@ -71,12 +75,18 @@ public class FrequencyCounter {
             //update loop control
             strin = fin.readLine();
         }
-    
 
-        // System.out.println("_____________________");
-        // System.out.println(list);
+        for(int f = 0; f < list.length; f++){
+            
+        }
+        
 
         // ***** Print Formatted Output *****
+        System.out.println("----------------------------------------");
+        System.out.println("frequency of numbers");
+        System.out.println("----------------------------------------");
+        System.out.println("number       frequency");
+
         // ***** Closing Message *****
         System.out.println();
         System.out.println("end of processing");
